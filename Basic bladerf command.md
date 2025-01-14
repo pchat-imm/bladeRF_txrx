@@ -197,3 +197,4 @@ recieve 1M samples in the FM radio band, at 10 MHz sample rate to a file samples
 ```
  bladerf-tool rx --num-samples 10000000 samples.sc16 100e6 10e6
 ```
+it works and it return a 4MB /tmp/samples.sc16 file. 
