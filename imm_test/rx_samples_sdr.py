@@ -1,3 +1,5 @@
+## Tutorial: https://pysdr.org/content/bladerf.html
+
 from bladerf import _bladerf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -89,6 +91,7 @@ for i in range(num_rows):
 extent = [(center_freq + sample_rate/-2)/1e6, (center_freq + sample_rate/2)/1e6, len(x)/sample_rate, 0]
 
 plt.imshow(spectrogram, aspect='auto', extent=extent)
+plt.title('Spectrogram rx_samples_sdr.py')
 plt.xlabel('Frequency (MHz)')
 plt.ylabel('Time (s)')
 plt.show()
