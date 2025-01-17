@@ -54,7 +54,10 @@ rx_ch.bandwidth = sample_rate/2
 rx_ch.gain_mode = _bladerf.GainMode.Manual
 rx_ch.gain = gain
 ```
-- setup synchronous stream and receive buffer. The while loop will continue to receive sample until the number of samples requested is reached. The received samples are stored in a separate numpy array. 
-```
 
-```
+[here] from: https://github.com/Nuand/bladeRF/blob/master/host/examples/python/txrx/txrx.py 
+transmit and receive at the same time for full duplex TX/RX
+
+
+[here] from: https://superfastpython.com/threadpool-python/
+Threadpool = It offers easy-to-use pools of worker threads and is ideal for making loops of I/O-bound tasks concurrent and for executing tasks asynchronously.
