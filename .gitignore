@@ -1,0 +1,4 @@
+*.sc16
+*.sc16q11
+imm_test/samples.sc16
+imm_test/test_result/
