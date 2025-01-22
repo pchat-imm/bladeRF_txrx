@@ -1,3 +1,5 @@
 *.sc16
 *.sc16q11
 /samples.sc16
+/get_PSS_seq/trial_txrx_PSS_Seq/rx_data_20250122_145957.csv
+/get_PSS_seq/trial_txrx_PSS_Seq/rx_data_20250122_145957.bin
