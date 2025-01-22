@@ -53,10 +53,17 @@ tx_ch.enable = True
 
 bytes_per_sample = 4
 num_samples = len(samples) // bytes_per_sample
+repeat = 2
+num_repeat = 0
 
 while True:
-    sdr.sync_tx(samples, num_samples)   # write to bladeRF
-    break
+    if num_repeat != repeat: 
+        sdr.sync_tx(samples, num_samples)   # write to bladeRF
+        print("num_repeat: ", num_repeat)
+        num_repeat += 1
+    else:
+        print("all transmitted")
+        break
 
 print("Transmit Complete!")
 tx_ch.enable = False
