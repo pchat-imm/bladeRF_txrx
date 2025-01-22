@@ -8,7 +8,10 @@ from bladerf import _bladerf
 import numpy as np
 import csv
 
-input_file = '/home/chatchamon/workarea/npn_5g/bladeRF_txrx/get_PSS_seq/PSS_NID2_0.csv'
+# select input file
+# input_file = '/home/chatchamon/workarea/npn_5g/bladeRF_txrx/get_PSS_seq/PSS_NID2_0.csv'
+# input_file = '/home/chatchamon/workarea/npn_5g/bladeRF_txrx/get_PSS_seq/PSS_NID2_1.csv'
+input_file = '/home/chatchamon/workarea/npn_5g/bladeRF_txrx/get_PSS_seq/PSS_NID2_2.csv'
 
 samples_list = []
 with open(input_file, 'r') as f:
@@ -20,9 +23,10 @@ with open(input_file, 'r') as f:
 
 samples = np.array(samples_list, dtype=np.complex64)
 samples *= 32767.0 # scale so they can be stored as int16s (-32767 to 32767)
-samples.view(np.int16)
-buf = samples.tobytes() # convert our samples to bytes and use them as transmit buffer
+samples = samples.view(np.int16)
+samples = samples.tobytes() # convert our samples to bytes and use them as transmit buffer
 
+# Setup BladeRF
 sdr = _bladerf.BladeRF()
 tx_ch = sdr.Channel(_bladerf.CHANNEL_TX(0))
 
@@ -47,8 +51,12 @@ sdr.sync_config(layout= _bladerf.ChannelLayout.TX_X1,
 print("Starting Transmit!")
 tx_ch.enable = True
 
-num_samples = len(samples)
+bytes_per_sample = 4
+num_samples = len(samples) // bytes_per_sample
 
 while True:
-    sdr.sync_tx(buf, num_samples)   # write to bladeRF
-    print("num_samples:")
+    sdr.sync_tx(samples, num_samples)   # write to bladeRF
+    break
+
+print("Transmit Complete!")
+tx_ch.enable = False
