@@ -1,9 +1,5 @@
-using SDR (BladeRF) to transmit and receive samples
-- rx_samples_sdr.py
-
-max(x) = 0.8232422-0.14990234j
-
-<img src = https://github.com/user-attachments/assets/f726af03-2f7a-42ce-a684-fc79ed071a92 width=50%>
+### current proposal
+<img src = https://github.com/user-attachments/assets/dc222c18-7651-43be-85ac-65e08671c456 width=70%>
 
 # task for `get_PSS_seq`
 ### 1. test using sdr to tx and keysight to rx
