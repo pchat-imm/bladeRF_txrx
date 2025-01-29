@@ -1,0 +1,3 @@
+[submodule "based_IQ_find_NID2/py3gpp"]
+	path = based_IQ_find_NID2/py3gpp
+	url = https://github.com/catkira/py3gpp
