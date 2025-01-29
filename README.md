@@ -1,19 +1,26 @@
 ### current proposal
 <img src = https://github.com/user-attachments/assets/dc222c18-7651-43be-85ac-65e08671c456 width=70%>
 
-# task for `get_PSS_seq`
-### 1. test using sdr to tx and keysight to rx
-**expected result**: periodically spike 
-**equipment**: 1 SDR, 1 Laptop, 1 Keysight
-- try transmit the samples file from `tx_PSS_seq.py`
-- use keysight waterfall to receive samples
-- check if the recieve samples the same with the transmitted samples
-- if not, change the transmitted file in `get_PSS_seq.py`
+**equipment** 
+- 1 computer
+- 1 sdr tx_srsRAN
+- 1 sdr rx the tx_srsRAN
 
-### 2. use probe 4 GHz
-**equipment**: 1 SDR, 1 Laptop, 1 Oscilloscope
+1. 1st_sdr tx_srsRAN
+2. 2nd_sdr rx the tx_srsRAN
+3. save rx_srsRAN as IQ waveform
+4. operate in multithreading
+- correlate rx_srsRAN with stored_seq (PSS_seq + freq_shift) * 18 times
+- get 18 values of max_corr
+5. compare max_corr
+- get peak_val_stored_seq
+- get peak_ind_stored_seq
+6. translate result 
+- peak_val_stored_seq into NID2, coarse_freq_offset
+- peak_index_stored_seq into offset
 
-### 3. handle multiple SDR
 
-**note**
-- to interrupt running bladeRF just keyboard interrupt (type `Ctrl + C`)
+# current task for `get_PSS_seq`
+- multi-threading in a SDR
+- how to know if the tx_seq is correct or not?
+- how to use 4GHz probe of oscilloscope
