@@ -1,13 +1,18 @@
 ### current proposal
 <img src = https://github.com/user-attachments/assets/dc222c18-7651-43be-85ac-65e08671c456 width=70%>
 
+# current task 
+- how to multi-threading/ multi-processing/ threading in python
+- plan flow and paramaters of the system
+
 **equipment** 
 - 1 computer
 - 1 sdr tx_srsRAN
 - 1 sdr rx the tx_srsRAN
 
-1. 1st_sdr tx_srsRAN
-2. 2nd_sdr rx the tx_srsRAN
+**process**
+1. the 1st_sdr tx_srsRAN
+2. the 2nd_sdr rx the tx_srsRAN
 3. save rx_srsRAN as IQ waveform
 4. operate in multithreading
 - correlate rx_srsRAN with stored_seq (PSS_seq + freq_shift) * 18 times
@@ -20,7 +25,6 @@
 - peak_index_stored_seq into offset
 
 
-# current task for `get_PSS_seq`
-- multi-threading in a SDR
+# other tasks for `get_PSS_seq`
 - how to know if the tx_seq is correct or not?
 - how to use 4GHz probe of oscilloscope
