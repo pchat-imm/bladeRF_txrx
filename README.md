@@ -1,8 +1,19 @@
 ### current proposal
 <img src = https://github.com/user-attachments/assets/dc222c18-7651-43be-85ac-65e08671c456 width=70%>
 
-# current task 
-- how to multi-threading/ multi-processing/ threading in python
+# current process 
+at folder `bladeRF_txrx/based_IQ_find_NID2/trial`
+- correct code of previous repo `iq_python` at `get_clean_CFO.py`
+- **main**: want to correlate `wavefrom` of SDR with `refWaveform` from PSS_seq
+    - the `waveform` need to be frequency shift and downsample first
+    - so they will be 6 rxWaveformDS with 3 refWaveform
+
+- `get_PSS_py.py` to get PSS_seq [0,1,2] and store in `/PSS_seq`
+- `load_all_PSS_seq.py` to load PSS_seq from previous step, store as List in a Dictionary
+
+# current tasks
+- how to multithread all
+- may read `cluade.ai` suggestion code 
 - plan flow and paramaters of the system
 
 **equipment** 
